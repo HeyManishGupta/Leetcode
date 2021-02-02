@@ -35,7 +35,7 @@ Using the above tables as example, return the following:
 SELECT Name AS Customers FROM Customers WHERE Id NOT IN
 (SELECT CustomerId FROM Orders);
 
--- 2
+-- 2 - Faster
 select Name as Customers from Customers as c 
 left join orders as o on c.id = o.CustomerId 
 where o.CustomerId is null;
